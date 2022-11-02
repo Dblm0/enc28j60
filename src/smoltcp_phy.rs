@@ -29,7 +29,7 @@ impl<'a, SPI, NCS, INT, RESET> Phy<'a, SPI, NCS, INT, RESET> {
     }
 }
 
-impl<'a, 'b, E, SPI: 'a, NCS: 'a, INT, RESET> Device<'a> for &mut Phy<'b, SPI, NCS, INT, RESET>
+impl<'a, 'b, E, SPI: 'a, NCS: 'a, INT, RESET> Device<'a> for Phy<'b, SPI, NCS, INT, RESET>
 where
     SPI: blocking::spi::Transfer<u8, Error = E> + blocking::spi::Write<u8, Error = E>,
     NCS: OutputPin,
