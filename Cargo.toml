@@ -12,35 +12,35 @@ repository = "https://github.com/japaric/enc28j60"
 version = "0.3.1"
 
 [dependencies]
-as-slice = "0.1.0"
+as-slice = "0.2.1"
 
 [dependencies.cast]
 default-features = false
-version = "0.2.2"
+version = "0.3.0"
 
 [dependencies.embedded-hal]
-version = "0.2.0"
+version = "0.2.7"
 features = ["unproven"]
 
 [dependencies.byteorder]
 default-features = false
-version = "1.2.1"
+version = "1.4.3"
 
 [dependencies.owning-slice]
 git = "https://github.com/japaric/owning-slice"
 
 [dependencies.smoltcp]
 git = "https://github.com/smoltcp-rs/smoltcp"
-version = "0.8.1"
+version = "0.9.1"
 features = ["proto-ipv4", "socket-tcp", "medium-ethernet"]
 default-features = false
 optional = true
 
 [dev-dependencies]
-cortex-m-rt = "0.6.7"
-cortex-m = "0.5.8"
-panic-semihosting = "0.5.1"
-stm32f1xx-hal = { git = "https://github.com/stm32-rs/stm32f1xx-hal.git", rev = "c7a5750", features = ["stm32f103", "rt"] }
+cortex-m-rt = "0.7.3"
+cortex-m = "0.7.7"
+panic-semihosting = "0.6.0"
+stm32f1xx-hal = { git = "https://github.com/stm32-rs/stm32f1xx-hal.git", features = ["stm32f103", "rt"] }
 
 # doesn't match new API
 # [[example]]
