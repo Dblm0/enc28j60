@@ -55,12 +55,15 @@ impl U16Ext for u16 {
         (self >> 8) as u8
     }
 
+    #[allow(clippy::uninit_assumed_init)]
+    #[allow(invalid_value)]
     fn be_repr(self) -> [u8; 2] {
         let mut bytes: [u8; 2] = unsafe { mem::MaybeUninit::uninit().assume_init() };
         BE::write_u16(&mut bytes, self);
         bytes
     }
-
+    #[allow(clippy::uninit_assumed_init)]
+    #[allow(invalid_value)]
     fn le_repr(self) -> [u8; 2] {
         let mut bytes: [u8; 2] = unsafe { mem::MaybeUninit::uninit().assume_init() };
         LE::write_u16(&mut bytes, self);
